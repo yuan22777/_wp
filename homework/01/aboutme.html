@@ -1,143 +1,185 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>陳郁安的個人履歷</title>
+    <title>陳郁安的個人網頁</title>
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+        }
+
         body {
             font-family: "Microsoft JhengHei", Arial, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            line-height: 1.6;
+            margin: 0;
             padding: 20px;
         }
-        .resume-card {
-            background: white;
-            width: 100%;
+
+        .container {
             max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
             padding: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
-        .header {
+
+        header {
             display: flex;
             align-items: center;
-            border-bottom: 2px solid #333;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
         }
-        .photo {
-            width: 120px;
-            height: 150px;
-            background-color: #ddd;
-            margin-right: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .photo img {
-            width: 100%;
-            height: 100%;
+
+        .profile-pic {
+            width: 150px;
+            height: 180px;
             object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid var(--accent-color);
+            margin-right: 30px;
         }
-        .basic-info h1 {
+
+        .header-info h1 {
             margin: 0;
-            color: #2c3e50;
+            font-size: 2.5em;
+            color: var(--primary-color);
         }
+
+        .header-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--accent-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 15px;
         }
-        section {
-            margin-bottom: 25px;
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
         }
-        h2 {
-            background: #2c3e50;
-            color: white;
-            padding: 5px 15px;
-            font-size: 1.1rem;
-            border-radius: 4px;
+
+        .label {
+            font-weight: bold;
+            font-size: 0.9em;
+            color: #888;
         }
-        .content-item {
-            padding-left: 15px;
-            line-height: 1.6;
-            color: #444;
+
+        .content {
+            font-size: 1.05em;
         }
+
         .tag {
             display: inline-block;
-            background: #e1e8ed;
-            padding: 2px 10px;
-            border-radius: 15px;
-            font-size: 0.9rem;
+            background: var(--bg-color);
+            padding: 5px 12px;
+            border-radius: 20px;
             margin-right: 5px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; text-align: center; }
+            .profile-pic { margin-right: 0; margin-bottom: 20px; }
+            .info-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-<div class="resume-card">
-    <div class="header">
-        <div class="photo">
-            <!-- 這裡可以替換成您的照片網址 -->
-            <img src="your-photo-url.jpg" alt="陳郁安">
-        </div>
-        <div class="basic-info">
+<div class="container">
+    <header>
+        <img src="your-photo.jpg" alt="陳郁安" class="profile-pic">
+        <div class="header-info">
             <h1>陳郁安</h1>
-            <div class="info-grid">
-                <div><strong>年齡：</strong>18 歲</div>
-                <div><strong>性別：</strong>女</div>
-                <div><strong>生日：</strong>民國 96 年 2 月 7 日</div>
-                <div><strong>手機：</strong>0903-982-469</div>
+            <p>18 歲 | 女性 | 民國 96 年 2 月 7 日生</p>
+            <p><strong>現居：</strong>新北市新店區新生街13巷18號3樓</p>
+        </div>
+    </header>
+
+    <div class="section">
+        <div class="section-title">聯絡方式</div>
+        <div class="info-grid">
+            <div class="info-item">
+                <span class="label">電話</span>
+                <span class="content">0903982469</span>
             </div>
-            <p><strong>Email：</strong><a href="mailto:s111410504@student.nqu.edu.tw">s111410504@student.nqu.edu.tw</a></p>
+            <div class="info-item">
+                <span class="label">電子信箱</span>
+                <span class="content">z111410504@student.nqu.edu.tw</span>
+            </div>
         </div>
     </div>
 
-    <section>
-        <h2>教育背景</h2>
-        <div class="content-item">
-            <p>• 國立金門大學 - 資訊工程學系 (就讀中)</p>
-            <p>• 臺北市立景美女子高級中學 (畢業)</p>
+    <div class="section">
+        <div class="section-title">教育背景</div>
+        <div class="content">
+            <p><strong>金門大學資工系</strong> (就讀中)</p>
+            <p>景美女子中學 (畢業)</p>
         </div>
-    </section>
+    </div>
 
-    <section>
-        <h2>工作經歷</h2>
-        <div class="content-item">
-            <p><strong>晶湯匙泰式主題餐廳</strong><br>
-            (隸屬共同存在國際餐飲集團)</p>
+    <div class="section">
+        <div class="section-title">工作經歷</div>
+        <div class="content">
+            <p><strong>共同存在國際餐飲集團 - 晶湯匙</strong></p>
+            <p>外場/服務人員 (曾任職)</p>
         </div>
-    </section>
+    </div>
 
-    <section>
-        <h2>語言與技能</h2>
-        <div class="content-item">
-            <p><strong>語言能力：</strong> 中文 (聽說讀寫)、英文 (聽說讀寫)、閩南語 (聽說)</p>
-            <p><strong>持有證照：</strong> 普通重型機車駕照</p>
-            <p><strong>專長興趣：</strong> 羽球、玩解謎類型遊戲</p>
+    <div class="section">
+        <div class="section-title">語言與技能</div>
+        <div class="info-item">
+            <span class="label">語言能力</span>
+            <div class="content">
+                <span class="tag">中文 (聽說讀寫)</span>
+                <span class="tag">英文 (聽說讀寫)</span>
+                <span class="tag">閩南語 (聽說)</span>
+            </div>
         </div>
-    </section>
+        <div class="info-item" style="margin-top: 15px;">
+            <span class="label">證照</span>
+            <div class="content">普通重型機車駕照</div>
+        </div>
+    </div>
 
-    <section>
-        <h2>自我評價</h2>
-        <div class="content-item">
-            <blockquote>
-                「我覺得跟我的名字一樣隨遇而安，個性隨和。遇到困難能冷靜解決不推辭。」
-            </blockquote>
+    <div class="section">
+        <div class="section-title">興趣與專長</div>
+        <div class="content">
+            <span class="tag">羽球</span>
+            <span class="tag">玩解謎類型遊戲</span>
         </div>
-    </section>
+    </div>
 
-    <section>
-        <h2>其他資訊</h2>
-        <div class="content-item">
-            <p><strong>現居地址：</strong> 新北市新店區新生街13巷18號3樓</p>
-            <p><strong>期望待遇：</strong> 依公司規定</p>
+    <div class="section">
+        <div class="section-title">自我評價</div>
+        <div class="content" style="font-style: italic; color: #555;">
+            「我覺得跟我的名字一樣隨遇而安，個性隨和，遇到困難能冷靜解決不推辭。」
         </div>
-    </section>
+    </div>
 </div>
 
 </body>
