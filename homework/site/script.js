@@ -141,6 +141,23 @@
         });
     });
 
+    /* -------- Tab 切換 (30 題總覽) -------- */
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetId = tab.getAttribute('data-tab');
+
+            tabs.forEach(t => t.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+
+            tab.classList.add('active');
+            const target = document.getElementById(targetId);
+            if (target) target.classList.add('active');
+        });
+    });
+
     /* -------- Console 彩蛋 -------- */
     console.log(
         '%c🎬 「劇」在一起 作業總覽網站 ',

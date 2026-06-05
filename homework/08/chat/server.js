@@ -33,6 +33,7 @@ db.serialize(() => {
     image TEXT DEFAULT '',
     timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
   )`);
+  db.run(`ALTER TABLE posts ADD COLUMN image TEXT DEFAULT ''`, () => {});
   
   db.run(`CREATE TABLE IF NOT EXISTS user_profile (
     user_id INTEGER PRIMARY KEY,

@@ -57,6 +57,10 @@
                 <span class="nav-num">08</span>
                 <span class="nav-text">「劇」在一起</span>
             </a>
+            <a href="#code30" class="nav-link">
+                <span class="nav-num">30</span>
+                <span class="nav-text">30 題程式碼</span>
+            </a>
         </nav>
         <div class="sidebar-footer">
             <p>陳郁安</p>
@@ -810,6 +814,448 @@ CREATE TABLE user_profile (user_id, bio, favorite_genre);</code></pre>
                 <strong>📚 學習收穫:</strong>
                 掌握全端專案開發流程、學習 SQLite 資料庫設計與操作、
                 理解 SPA 架構的實作方式、體會 AI 輔助開發的技巧——明確需求、條列說明、閱讀程式碼。
+            </div>
+        </section>
+
+        <!-- ========== 30 題程式碼總覽 ========== -->
+        <section id="code30" class="hw-section">
+            <div class="hw-header">
+                <div class="hw-num">30</div>
+                <div class="hw-titles">
+                    <span class="hw-tag tag-js">JavaScript</span>
+                    <h2>30 題程式碼總覽</h2>
+                    <p class="hw-sub">作業 04 ・ 06 ・ 07 完整 10 題 × 3 = 30 題</p>
+                </div>
+            </div>
+
+            <div class="tabs">
+                <button class="tab active" data-tab="hw04-tab">📘 作業 04(基礎)</button>
+                <button class="tab" data-tab="hw06-tab">📗 作業 06(進階)</button>
+                <button class="tab" data-tab="hw07-tab">📕 作業 07(Node.js)</button>
+            </div>
+
+            <!-- 04 TAB -->
+            <div id="hw04-tab" class="tab-content active">
+                <h3 class="block-title">📘 作業 04 — JavaScript 基礎語法(10 題)</h3>
+
+                <div class="code-block">
+                    <div class="code-head"><span>01 — 基礎數字判斷(if/else)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>function checkNumber(num) {
+  if (num &gt; 0) return "正數";
+  else if (num &lt; 0) return "負數";
+  else return "這是零";
+}
+
+console.log(checkNumber(10));   // 正數
+console.log(checkNumber(-5));   // 負數
+console.log(checkNumber(0));    // 這是零</code></pre>
+                    <div class="code-output">▶ 輸出:<code>正數</code> <code>負數</code> <code>這是零</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>02 — 2 的乘法表生成器(for 迴圈)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>for (let i = 1; i &lt;= 9; i++) {
+  console.log(`2 * ${i} = ${2 * i}`);
+}</code></pre>
+                    <div class="code-output">▶ 輸出:<code>2 * 1 = 2</code> ... <code>2 * 9 = 18</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>03 — 倒數計時器(while 迴圈)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>let count = 5;
+while (count &gt; 0) {
+  console.log(count);
+  count--;
+}
+console.log("Liftoff!");</code></pre>
+                    <div class="code-output">▶ 輸出:<code>5 4 3 2 1 Liftoff!</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>04 — 陣列總和計算(Array + for)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>const prices = [100, 250, 50, 300];
+
+function calculateTotal(arr) {
+  let sum = 0;
+  for (let i = 0; i &lt; arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
+
+console.log("總金額:", calculateTotal(prices));</code></pre>
+                    <div class="code-output">▶ 輸出:<code>總金額: 700</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>05 — 聯絡人資訊管理(Object)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>const user = {
+  name: "Gemini",
+  age: 1,
+  greet: function() {
+    console.log(`你好,我是 ${this.name}`);
+  }
+};
+
+user.greet();</code></pre>
+                    <div class="code-output">▶ 輸出:<code>你好,我是 Gemini</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>06 — 進階過濾器(Array + if + function)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>function filterAdults(ages) {
+  let adults = [];
+  for (let i = 0; i &lt; ages.length; i++) {
+    if (ages[i] &gt;= 18) {
+      adults.push(ages[i]);
+    }
+  }
+  return adults;
+}
+
+const members = [15, 22, 12, 30, 18];
+console.log(filterAdults(members));</code></pre>
+                    <div class="code-output">▶ 輸出:<code>[ 22, 30, 18 ]</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>07 — 簡易購物車(Array of Objects)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>const cart = [
+  { name: "蘋果", price: 30 },
+  { name: "香蕉", price: 15 },
+  { name: "西瓜", price: 100 }
+];
+
+for (let i = 0; i &lt; cart.length; i++) {
+  console.log(`品名: ${cart[i].name}, 價格: ${cart[i].price}`);
+}</code></pre>
+                    <div class="code-output">▶ 輸出:<code>品名: 蘋果, 價格: 30</code> ... <code>品名: 西瓜, 價格: 100</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>08 — JSON 格式轉換(JSON.parse / stringify)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>const jsonString = '{"id": 1, "status": "active"}';
+const dataObj = JSON.parse(jsonString);
+dataObj.status = "inactive";
+const newJson = JSON.stringify(dataObj);
+
+console.log("原始字串:", jsonString);
+console.log("轉換後字串:", newJson);</code></pre>
+                    <div class="code-output">▶ 輸出:<code>{"id": 1, "status": "active"}</code> → <code>{"id":1,"status":"inactive"}</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>09 — 尋找最大值(for + if 演算法)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>function findMax(arr) {
+  let max = arr[0];
+  for (let i = 1; i &lt; arr.length; i++) {
+    if (arr[i] &gt; max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+const numbers = [23, 56, 12, 99, 45];
+console.log("最大值是:", findMax(numbers));</code></pre>
+                    <div class="code-output">▶ 輸出:<code>最大值是: 99</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>10 — 學生資料庫搜尋(綜合練習)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>const students = [
+  { name: "小明", score: 85 },
+  { name: "小華", score: 60 },
+  { name: "小美", score: 92 },
+  { name: "小強", score: 45 }
+];
+
+function getTopStudents(studentList, threshold) {
+  let result = [];
+  for (let i = 0; i &lt; studentList.length; i++) {
+    if (studentList[i].score &gt;= threshold) {
+      result.push(studentList[i].name);
+    }
+  }
+  return result;
+}
+
+const passList = getTopStudents(students, 60);
+console.log("及格名單:", passList);</code></pre>
+                    <div class="code-output">▶ 輸出:<code>及格名單: [ '小明', '小華', '小美' ]</code></div>
+                </div>
+            </div>
+
+            <!-- 06 TAB -->
+            <div id="hw06-tab" class="tab-content">
+                <h3 class="block-title">📗 作業 06 — JavaScript 進階(10 題)</h3>
+
+                <div class="code-block">
+                    <div class="code-head"><span>01 — 高階函式(mathTool 接收函式當參數)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>function mathTool(num1, num2, action){
+    return action(num1, num2);
+}
+
+const plus  = mathTool(10, 5, function(a, b){ return a + b; });
+const minus = mathTool(10, 5, function(a, b){ return a - b; });
+
+console.log(plus);
+console.log(minus);</code></pre>
+                    <div class="code-output">▶ 輸出:<code>15</code> <code>5</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>02 — IIFE 立即執行函式</span><span class="code-lang">JavaScript</span></div>
+<pre><code>(function(){
+    let count = 100;
+    console.log("Count is:", count);
+})();</code></pre>
+                    <div class="code-output">▶ 輸出:<code>Count is: 100</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>03 — Array.map()(打折 8 折)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>const prices = [100, 200, 300, 400];
+const onSale = prices.map(prices =&gt; prices * 0.8);
+console.log(onSale);</code></pre>
+                    <div class="code-output">▶ 輸出:<code>[ 80, 160, 240, 320 ]</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>04 — pop() + unshift()(參考型別直接改動)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>function cleanData(arr){
+    arr.pop();
+    arr.unshift("Start");
+}
+let myData = [1, 2, 3];
+cleanData(myData);
+
+console.log(myData);</code></pre>
+                    <div class="code-output">▶ 輸出:<code>[ 'Start', 1, 2 ]</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>05 — 閉包 Closure(multiplier)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>function multiplier(factor){
+    return (n) =&gt; n * factor;
+}
+const double = multiplier(2);
+console.log(double(10));</code></pre>
+                    <div class="code-output">▶ 輸出:<code>20</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>06 — 自訂 myFilter()(高階函式)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>function myFilter(arr, callback){
+    const result = [];
+    for(let i = 0; i &lt; arr.length; i++){
+        if(callback(arr[i])) result.push(arr[i]);
+    }
+    return result;
+}
+
+const number = [1, 5, 8, 12];
+const filter = myFilter(number, (n) =&gt; n &gt; 7);
+console.log(filter);</code></pre>
+                    <div class="code-output">▶ 輸出:<code>[ 8, 12 ]</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>07 — Array.filter()(過濾成年人)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>const users = [{name: "Alice", age: 25}, {name: "Bob", age: 17}];
+const adult = users.filter(users =&gt; users.age &gt; 18);
+console.log(adult);</code></pre>
+                    <div class="code-output">▶ 輸出:<code>[ { name: 'Alice', age: 25 } ]</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>08 — 傳值 vs 傳址(陣列 vs 重新賦值)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>let listA = [1, 2];
+let listB = [3, 4];
+
+function process(a, b) {
+  a.push(99);   // 修改 listA 內部
+  b = [100];    // 重新賦值,不影響 listB
+}
+process(listA, listB);
+
+// listA = [1, 2, 99]
+// listB = [3, 4]
+// 原因:a 修改了 listA 內部的東西,所以改變了
+// 原因:b 是重新賦予新值,並無修改 listB 內部的東西</code></pre>
+                    <div class="code-output">▶ 說明:`a.push(99)` 直接改動 `listA` 內部元素(傳址),`b = [100]` 只是把區域變數 `b` 重新指向新陣列,不影響 `listB`。</div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>09 — (空檔)</span><span class="code-lang">JavaScript</span></div>
+                    <div class="code-output">▶ 此題檔案為空,未實作。</div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>10 — reduce + 高階函式(計算折扣後金額)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>function calculateTotal(cart, discountFunc) {
+    const sum = cart.reduce((total, price) =&gt; total + price, 0);
+    return discountFunc(sum);
+}
+
+const cart = [100, 200, 300];
+const finalPrice = calculateTotal(cart, (total) =&gt; total - 50);
+
+console.log(`最終金額為:${finalPrice}`);</code></pre>
+                    <div class="code-output">▶ 輸出:<code>最終金額為:550</code></div>
+                </div>
+            </div>
+
+            <!-- 07 TAB -->
+            <div id="hw07-tab" class="tab-content">
+                <h3 class="block-title">📕 作業 07 — Node.js 進階(10 題)</h3>
+
+                <div class="code-block">
+                    <div class="code-head"><span>01 — 物件存取(點符號 vs 中括號)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>const post = {
+    id: 1,
+    title: "Hello World",
+    content: "Markdown content"
+};
+
+console.log(post.title);      // 點符號
+console.log(post["title"]);   // 中括號</code></pre>
+                    <div class="code-output">▶ 輸出:<code>Hello World</code> <code>Hello World</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>02 — 解構賦值(Destructuring)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>const req = { body: { title: "JS教學", content: "內容在此", author: "Gemini" } };
+const { title, content } = req.body;
+
+console.log(title);
+console.log(content);</code></pre>
+                    <div class="code-output">▶ 輸出:<code>JS教學</code> <code>內容在此</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>03 — forEach() 拼接 HTML</span><span class="code-lang">JavaScript</span></div>
+<pre><code>const posts = [
+    { id: 1, t: "A" },
+    { id: 2, t: "B" }
+];
+
+let html = "";
+posts.forEach(post =&gt; {
+    html += `&lt;div&gt;${post.t}&lt;/div&gt;`;
+});
+
+console.log(html);</code></pre>
+                    <div class="code-output">▶ 輸出:<code>&lt;div&gt;A&lt;/div&gt;&lt;div&gt;B&lt;/div&gt;</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>04 — 動態新增物件屬性</span><span class="code-lang">JavaScript</span></div>
+<pre><code>const params = {};
+params["id"] = 99;       // 中括號法(適合動態變數)
+// params.id = 99;       // 點符號法(等效)
+
+console.log(params);
+console.log(params.id);</code></pre>
+                    <div class="code-output">▶ 輸出:<code>{ id: 99 }</code> <code>99</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>05 — Callback Pattern(錯誤優先)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>function fetchData(id, callback) {
+    const result = { id: id, status: "success" };
+    callback(null, result);
+}
+
+fetchData(101, (error, data) =&gt; {
+    if (error) {
+        console.error("發生錯誤:", error);
+    } else {
+        console.log("成功取得資料:", data);
+    }
+});</code></pre>
+                    <div class="code-output">▶ 輸出:<code>成功取得資料: { id: 101, status: 'success' }</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>06 — JSON.parse() 解析</span><span class="code-lang">JavaScript</span></div>
+<pre><code>const jsonStr = '{"title": "Post 1", "tags": ["js", "node"]}';
+let obj = JSON.parse(jsonStr);
+
+console.log(obj.tags[1]);   // 索引 1</code></pre>
+                    <div class="code-output">▶ 輸出:<code>node</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>07 — 模擬資料庫查詢(Callback)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>function fakeGet(sql, params, callback) {
+    const row = { id: 1, title: "測試文章", content: "這是內容" };
+    callback(null, row);
+}
+
+const sql = "SELECT * FROM posts WHERE id = ?";
+const params = [1];
+
+fakeGet(sql, params, (err, data) =&gt; {
+    if (err) {
+        console.error("查詢出錯了!");
+    } else {
+        console.log("從資料庫抓到的標題是:", data.title);
+    }
+});</code></pre>
+                    <div class="code-output">▶ 輸出:<code>從資料庫抓到的標題是: 測試文章</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>08 — 樣板字串 + 三元運算</span><span class="code-lang">JavaScript</span></div>
+<pre><code>let user = "Guest";
+const html = `&lt;h1&gt;Welcome, ${user ? user : "Stranger"}&lt;/h1&gt;`;
+console.log(html);
+
+user = "";   // 空字串為 false
+const html2 = `&lt;h1&gt;Welcome, ${user ? user : "Stranger"}&lt;/h1&gt;`;
+console.log(html2);</code></pre>
+                    <div class="code-output">▶ 輸出:<code>&lt;h1&gt;Welcome, Guest&lt;/h1&gt;</code> <code>&lt;h1&gt;Welcome, Stranger&lt;/h1&gt;</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>09 — substring() 截斷字串</span><span class="code-lang">JavaScript</span></div>
+<pre><code>const contents = [
+    "Very long content here",
+    "Another Very long content here",
+    "3rd Very long content here"
+];
+
+const originalStr = contents[0];
+const shortContent = originalStr.substring(0, 10);
+const result = shortContent + "...";
+
+console.log(result);</code></pre>
+                    <div class="code-output">▶ 輸出:<code>Very long ...</code></div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-head"><span>10 — 權限檢查(Callback 進階)</span><span class="code-lang">JavaScript</span></div>
+<pre><code>function checkAdmin(role, callback) {
+    if (role !== "admin") {
+        return callback("Access Denied");
+    }
+    callback(null, "Welcome");
+}
+
+// guest:錯誤
+checkAdmin("guest", (err, msg) =&gt; {
+    if (err) { console.error("[錯誤]:", err); return; }
+    console.log(msg);
+});
+
+// admin:成功
+checkAdmin("admin", (err, msg) =&gt; {
+    if (err) { console.error("[錯誤]:", err); return; }
+    console.log("[成功]:", msg);
+});</code></pre>
+                    <div class="code-output">▶ 輸出:<code>[錯誤]: Access Denied</code> <code>[成功]: Welcome</code></div>
+                </div>
             </div>
         </section>
 
