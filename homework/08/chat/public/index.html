@@ -69,11 +69,6 @@
     
     .profile-post-box { background: white; border-radius: 8px; padding: 20px; margin-bottom: 20px; border: 1px solid #ddd; }
     .profile-post-box textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; resize: none; height: 80px; font-family: inherit; font-size: 14px; }
-    .profile-post-box .image-upload { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
-    .profile-post-box .image-upload input[type="file"] { display: none; }
-    .profile-post-box .image-upload label { background: #eee; padding: 8px 15px; border-radius: 6px; cursor: pointer; font-size: 14px; }
-    .profile-post-box .image-preview { margin-top: 10px; }
-    .profile-post-box .image-preview img { max-width: 200px; max-height: 150px; border-radius: 8px; }
     .profile-post-box button { margin-top: 10px; padding: 10px 20px; background: #333; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; }
     
     .edit-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 100; }
@@ -146,7 +141,7 @@
           <h3>🔥 近期熱映</h3>
           <div id="drama-list">
             <div class="drama-item">
-              <div class="title">太空超人</div>
+              <div class="title">別離無恙</div>
               <div class="type">電影</div>
               <div class="date">2026年6月上映</div>
             </div>
@@ -215,11 +210,6 @@
           </div>
           <div class="profile-post-box" id="my-post-box">
             <textarea id="my-post-content" placeholder="分享你最近看的劇或電影吧！"></textarea>
-            <div class="image-upload">
-              <label for="image-input">📷 上傳照片</label>
-              <input type="file" id="image-input" accept="image/*" onchange="previewImage()">
-              <div class="image-preview" id="image-preview"></div>
-            </div>
             <button onclick="publishMyPost()">發布</button>
           </div>
           <div class="posts-list" id="profile-posts"></div>
@@ -274,7 +264,6 @@
     let allPostsData = [];
     let myPostsData = [];
     let viewingUserId = null;
-    let selectedImage = null;
     let userProfile = { bio: '', favorite_genre: '' };
     
     function saveUser(user) {
@@ -486,39 +475,34 @@
     function submitComment(event, postId) {
       if (event.key === 'Enter') addComment(postId);
     }
-    
-    function previewImage() {
-      const input = document.getElementById('image-input');
-      const preview = document.getElementById('image-preview');
-      if (input.files && input.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          selectedImage = e.target.result;
-          preview.innerHTML = `<img src="${e.target.result}">`;
-        };
-        reader.readAsDataURL(input.files[0]);
-      }
-    }
-    
+
     async function publishMyPost() {
       const content = document.getElementById('my-post-content').value;
-      if (!content.trim() && !selectedImage) {
-        alert('請輸入內容或選擇圖片');
+      if (!content.trim()) {
+        alert('請輸入內容');
         return;
       }
-      
-      await fetch('/api/posts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ user_id: currentUser.id, content, image: selectedImage || '' })
-      });
-      
-      document.getElementById('my-post-content').value = '';
-      document.getElementById('image-input').value = '';
-      document.getElementById('image-preview').innerHTML = '';
-      selectedImage = null;
-      loadMyProfile();
-      loadAllPosts();
+
+      try {
+        const postRes = await fetch('/api/posts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ user_id: currentUser.id, content, image: '' })
+        });
+        const postData = await postRes.json();
+
+        if (!postData.success) {
+          alert('貼文發布失敗');
+          return;
+        }
+
+        document.getElementById('my-post-content').value = '';
+        loadMyProfile();
+        loadAllPosts();
+      } catch (err) {
+        console.error('發布失敗:', err);
+        alert('貼文發布失敗');
+      }
     }
     
     async function deletePost(postId, containerId) {

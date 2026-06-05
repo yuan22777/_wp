@@ -6,7 +6,6 @@ const PORT = 3000;
 
 app.use(express.json({ limit: '50mb' }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 const db = new sqlite3.Database('./social.db');
 
@@ -56,7 +55,7 @@ db.serialize(() => {
     timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
   )`);
 });
-
+//註冊 
 app.post('/api/register', (req, res) => {
   const { username, password, nickname } = req.body;
   db.run(`INSERT INTO users (username, password, nickname) VALUES (?, ?, ?)`, 
@@ -91,7 +90,7 @@ app.get('/api/user/:userId', (req, res) => {
     res.json(user);
   });
 });
-
+//貼文跟讚
 app.get('/api/user-posts/:userId', (req, res) => {
   const { userId } = req.params;
   db.all(`SELECT p.*, u.nickname, u.avatar FROM posts p 
@@ -128,7 +127,7 @@ app.get('/api/user-posts/:userId', (req, res) => {
     }
   );
 });
-
+//訊息
 app.post('/api/messages', (req, res) => {
   const { sender_id, receiver_id, content } = req.body;
   db.run(`INSERT INTO messages (sender_id, receiver_id, content) VALUES (?, ?, ?)`,

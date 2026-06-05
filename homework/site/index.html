@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網頁設計作業總覽｜陳郁安</title>
+    <meta name="description" content="國立金門大學資工系 114 學年度第 2 學期《網頁設計》課程作業總覽,涵蓋 HTML、CSS、JavaScript、Node.js 與全端專案開發。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 側邊導覽列 -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">WP</div>
+            <div class="logo-text">
+                <span class="logo-title">網頁設計</span>
+                <span class="logo-sub">作業總覽</span>
+            </div>
+        </div>
+        <nav class="nav">
+            <a href="#home" class="nav-link active">
+                <span class="nav-num">00</span>
+                <span class="nav-text">首頁</span>
+            </a>
+            <a href="#hw01" class="nav-link">
+                <span class="nav-num">01</span>
+                <span class="nav-text">HTML 個人履歷</span>
+            </a>
+            <a href="#hw02" class="nav-link">
+                <span class="nav-num">02</span>
+                <span class="nav-text">HTML 表單</span>
+            </a>
+            <a href="#hw03" class="nav-link">
+                <span class="nav-num">03</span>
+                <span class="nav-text">Node.js 入門</span>
+            </a>
+            <a href="#hw04" class="nav-link">
+                <span class="nav-num">04</span>
+                <span class="nav-text">JavaScript 基礎</span>
+            </a>
+            <a href="#hw05" class="nav-link">
+                <span class="nav-num">05</span>
+                <span class="nav-text">Blog 部落格</span>
+            </a>
+            <a href="#hw06" class="nav-link">
+                <span class="nav-num">06</span>
+                <span class="nav-text">JavaScript 進階</span>
+            </a>
+            <a href="#hw07" class="nav-link">
+                <span class="nav-num">07</span>
+                <span class="nav-text">Node.js 進階</span>
+            </a>
+            <a href="#hw08" class="nav-link">
+                <span class="nav-num">08</span>
+                <span class="nav-text">「劇」在一起</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <p>陳郁安</p>
+            <p class="muted">國立金門大學 資工系</p>
+            <p class="muted">114 學年度第 2 學期</p>
+        </div>
+    </aside>
+
+    <!-- 手機版選單按鈕 -->
+    <button class="menu-toggle" id="menuToggle" aria-label="切換選單">
+        <span></span><span></span><span></span>
+    </button>
+
+    <!-- 主要內容 -->
+    <main class="main">
+        <!-- Hero -->
+        <section id="home" class="hero">
+            <div class="hero-inner">
+                <span class="hero-badge">課程作業總覽</span>
+                <h1 class="hero-title">
+                    從 <span class="grad-1">HTML</span> 走到 <span class="grad-2">全端專案</span><br>
+                    的學習旅程
+                </h1>
+                <p class="hero-desc">
+                    本網站整理了《網頁設計》課程 8 個作業的內容,從最基本的 HTML 履歷與表單,
+                    到 JavaScript / Node.js 基礎與進階,最後完成兩個全端專案——Blog 部落格與「劇」在一起社群平台。
+                </p>
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <span class="meta-num">08</span>
+                        <span class="meta-label">份作業</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-num">10+</span>
+                        <span class="meta-label">支 JS 練習</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-num">2</span>
+                        <span class="meta-label">個全端專案</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-num">30+</span>
+                        <span class="meta-label">API 端點</span>
+                    </div>
+                </div>
+                <div class="hero-path">
+                    <span class="path-step">HTML</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-step">Node.js</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-step">JavaScript</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-step">全端專案</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 01 ========== -->
+        <section id="hw01" class="hw-section">
+            <div class="hw-header">
+                <div class="hw-num">01</div>
+                <div class="hw-titles">
+                    <span class="hw-tag tag-html">HTML</span>
+                    <h2>HTML 個人履歷</h2>
+                    <p class="hw-sub">靜態網頁設計 ・ HTML + CSS</p>
+                </div>
+            </div>
+
+            <div class="hw-grid">
+                <div class="card">
+                    <h3>📄 專案概述</h3>
+                    <p>個人履歷網頁,展示學生「陳郁安」的個人資料、學歷、工作經歷和專業技能,使用純 HTML 與 CSS 完成響應式卡片式設計。</p>
+                </div>
+                <div class="card">
+                    <h3>🎯 主要功能</h3>
+                    <ul>
+                        <li>個人基本資料展示:姓名、年齡、性別、聯絡方式</li>
+                        <li>學歷狀況:國立金門大學資工系(就讀中)</li>
+                        <li>工作經歷:餐飲集團 — 晶湯匙</li>
+                        <li>專業技能與證照:語文、駕照、興趣專長</li>
+                        <li>自我評價:個人特質描述</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🛠️ 技術特點</h3>
+                    <ul>
+                        <li>使用 CSS Grid 進行響應式佈局</li>
+                        <li>卡片式設計,視覺層次分明</li>
+                        <li>使用 CSS 變數管理主題色</li>
+                        <li>響應式設計,適應不同螢幕</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>📁 檔案</h3>
+                    <ul class="file-list">
+                        <li><code>01/aboutme.html</code></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="code-block">
+                <div class="code-head">
+                    <span>aboutme.html (節錄)</span>
+                    <span class="code-lang">HTML</span>
+                </div>
+<pre><code>&lt;div class="info-grid"&gt;
+    &lt;div class="info-item"&gt;
+        &lt;span class="label"&gt;姓名:&lt;/span&gt; 陳郁安
+    &lt;/div&gt;
+    &lt;div class="info-item"&gt;
+        &lt;span class="label"&gt;學校:&lt;/span&gt; 國立金門大學 資工系
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <div class="learn-box">
+                <strong>📚 學習收穫:</strong>
+                掌握 HTML 基本結構與語義化標籤、學習 CSS Grid / Flexbox 佈局、理解響應式設計的基本概念。
+            </div>
+        </section>
+
+        <!-- ========== 02 ========== -->
+        <section id="hw02" class="hw-section">
+            <div class="hw-header">
+                <div class="hw-num">02</div>
+                <div class="hw-titles">
+                    <span class="hw-tag tag-html">HTML</span>
+                    <h2>HTML 表單</h2>
+                    <p class="hw-sub">互動式表單 ・ HTML + CSS + JavaScript</p>
+                </div>
+            </div>
+
+            <div class="hw-grid">
+                <div class="card">
+                    <h3>📄 專案概述</h3>
+                    <p>顧客滿意度調查問卷,展示各種表單元素的使用和現代 CSS 樣式設計,包含輸入驗證與互動效果。</p>
+                </div>
+                <div class="card">
+                    <h3>🎯 主要功能</h3>
+                    <ul>
+                        <li>文字輸入欄位:姓名、電子信箱</li>
+                        <li>下拉選單:來源管道選擇</li>
+                        <li>單選按鈕:滿意度評分(非常滿意～不太滿意)</li>
+                        <li>複選按鈕:產品特點多選</li>
+                        <li>文字區域:開放式回饋欄位</li>
+                        <li>表單送出(JS 模擬)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🛠️ 技術特點</h3>
+                    <ul>
+                        <li>使用 CSS 變數(--primary-color)管理主題色</li>
+                        <li>引入 Google Fonts (Noto Sans TC)</li>
+                        <li>表單驗證功能(required 屬性)</li>
+                        <li>Hover 與 Focus 動畫效果</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>📁 檔案</h3>
+                    <ul class="file-list">
+                        <li><code>02/表單.html</code></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="code-block">
+                <div class="code-head">
+                    <span>CSS 變數與樣式</span>
+                    <span class="code-lang">CSS</span>
+                </div>
+<pre><code>:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --bg-color: #f9f9fb;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.2);
+}</code></pre>
+            </div>
+
+            <div class="learn-box">
+                <strong>📚 學習收穫:</strong>
+                掌握各種 HTML 表單元素(text、email、radio、checkbox、select、textarea)、
+                學習 CSS 變數與現代 CSS 技法、理解表單驗證基本原理。
+            </div>
+        </section>
+
+        <!-- ========== 03 ========== -->
+        <section id="hw03" class="hw-section">
+            <div class="hw-header">
+                <div class="hw-num">03</div>
+                <div class="hw-titles">
+                    <span class="hw-tag tag-node">Node.js</span>
+                    <h2>Node.js 入門</h2>
+                    <p class="hw-sub">環境驗證 ・ Node.js</p>
+                </div>
+            </div>
+
+            <div class="hw-grid">
+                <div class="card">
+                    <h3>📄 專案概述</h3>
+                   > 最基礎的 Node.js 練習,用於驗證 Node.js 環境設定是否成功,
+                    並確認終端機可以正確執行 JavaScript 檔案。
+                </div>
+                <div class="card">
+                    <h3>🚀 執行方式</h3>
+                    <ul>
+                        <li>確認已安裝 Node.js</li>
+                        <li>在終端機輸入 <code>node hello.js</code></li>
+                        <li>看到 <code>Hello 你好</code> 即代表成功</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>📁 檔案</h3>
+                    <ul class="file-list">
+                        <li><code>03/hello.js</code></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>💡 為什麼要做這個?</h3>
+                    <p>這是後續所有 Node.js 練習的起點,
+                    透過最簡單的程式碼確認執行環境一切就緒,為進入更深的後端開發做準備。</p>
+                </div>
+            </div>
+
+            <div class="code-block">
+                <div class="code-head">
+                    <span>hello.js</span>
+                    <span class="code-lang">JavaScript</span>
+                </div>
+<pre><code>console.log('Hello 你好')</code></pre>
+            </div>
+
+            <div class="terminal">
+                <div class="terminal-head">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">PowerShell</span>
+                </div>
+                <pre><code>PS C:\Users\yuan0\Desktop\html\_wp\homework\03&gt; node hello.js
+Hello 你好</code></pre>
+            </div>
+
+            <div class="learn-box">
+                <strong>📚 學習收穫:</strong>
+                確認 Node.js 環境安裝成功、了解如何使用 Node.js 在終端機執行 JavaScript 檔案。
+            </div>
+        </section>
+
+        <!-- ========== 04 ========== -->
+        <section id="hw04" class="hw-section">
+            <div class="hw-header">
+                <div class="hw-num">04</div>
+                <div class="hw-titles">
+                    <span class="hw-tag tag-js">JavaScript</span>
+                    <h2>JavaScript 基礎語法</h2>
+                    <p class="hw-sub">10 道基礎練習 ・ JavaScript (Node.js)</p>
+                </div>
+            </div>
+
+            <div class="hw-grid">
+                <div class="card">
+                    <h3>📄 專案概述</h3>
+                    <p>10 道 JavaScript 基礎語法練習題,涵蓋條件判斷、迴圈、陣列、物件、JSON 等核心概念,搭配 README 完整記錄 AI 對話與測試結果。</p>
+                </div>
+                <div class="card wide">
+                    <h3>📝 10 道題目</h3>
+                    <div class="exercises">
+                        <div class="ex"><span class="ex-num">01</span><div><strong>正/負/零判斷</strong><br><small>if / else</small></div></div>
+                        <div class="ex"><span class="ex-num">02</span><div><strong>乘法表生成器</strong><br><small>for 迴圈</small></div></div>
+                        <div class="ex"><span class="ex-num">03</span><div><strong>倒數計時器</strong><br><small>while 迴圈</small></div></div>
+                        <div class="ex"><span class="ex-num">04</span><div><strong>陣列總和計算</strong><br><small>Array + for</small></div></div>
+                        <div class="ex"><span class="ex-num">05</span><div><strong>聯絡人資訊</strong><br><small>Object</small></div></div>
+                        <div class="ex"><span class="ex-num">06</span><div><strong>進階過濾器</strong><br><small>Array + if + function</small></div></div>
+                        <div class="ex"><span class="ex-num">07</span><div><strong>簡易購物車</strong><br><small>Array of Objects</small></div></div>
+                        <div class="ex"><span class="ex-num">08</span><div><strong>JSON 格式轉換</strong><br><small>JSON.parse / stringify</small></div></div>
+                        <div class="ex"><span class="ex-num">09</span><div><strong>尋找最大值</strong><br><small>for + if 演算法</small></div></div>
+                        <div class="ex"><span class="ex-num">10</span><div><strong>學生資料庫搜尋</strong><br><small>綜合練習</small></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-block">
+                <div class="code-head">
+                    <span>04/01.js — 基礎數字判斷</span>
+                    <span class="code-lang">JavaScript</span>
+                </div>
+<pre><code>function checkNumber(num) {
+  if (num &gt; 0) return "正數";
+  else if (num &lt; 0) return "負數";
+  else return "這是零";
+}
+
+console.log(checkNumber(10));   // 正數
+console.log(checkNumber(-5));   // 負數
+console.log(checkNumber(0));    // 這是零</code></pre>
+            </div>
+
+            <div class="code-block">
+                <div class="code-head">
+                    <span>04/08.js — JSON 格式轉換</span>
+                    <span class="code-lang">JavaScript</span>
+                </div>
+<pre><code>const jsonString = '{"id": 1, "status": "active"}';
+const dataObj = JSON.parse(jsonString);
+dataObj.status = "inactive";
+const newJson = JSON.stringify(dataObj);
+console.log("原始字串:", jsonString);
+console.log("轉換後字串:", newJson);</code></pre>
+            </div>
+
+            <div class="link-box">
+                <span>🤖 AI 對話紀錄:</span>
+                <a href="https://gemini.google.com/share/4433c3102012" target="_blank" rel="noopener">gemini.google.com/share/4433c3102012</a>
+            </div>
+
+            <div class="learn-box">
+                <strong>📚 學習收穫:</strong>
+                掌握 JavaScript 基本語法結構、學習條件判斷與迴圈、理解陣列與物件的使用、練習 JSON 格式轉換。
+            </div>
+        </section>
+
+        <!-- ========== 05 ========== -->
+        <section id="hw05" class="hw-section">
+            <div class="hw-header">
+                <div class="hw-num">05</div>
+                <div class="hw-titles">
+                    <span class="hw-tag tag-full">全端</span>
+                    <h2>Blog 社群部落格專案</h2>
+                    <p class="hw-sub">迭代式全端專案 ・ Node.js + Express + SQLite</p>
+                </div>
+            </div>
+
+            <div class="hw-grid">
+                <div class="card">
+                    <h3>📄 專案概述</h3>
+                    <p>類似 Twitter / Thread 的社群部落格系統,採用迭代式開發,分為 4 個版本逐步完善功能:blog → blog1_user → blog2_color → blog3_final。</p>
+                </div>
+                <div class="card">
+                    <h3>🛠️ 技術堆疊</h3>
+                    <ul>
+                        <li><strong>後端:</strong>Express.js</li>
+                        <li><strong>資料庫:</strong>SQLite (sql.js)</li>
+                        <li><strong>密碼雜湊:</strong>PBKDF2 + SHA-512</li>
+                        <li><strong>Session:</strong>express-session</li>
+                        <li><strong>前端:</strong>HTML + CSS + JavaScript</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>👤 使用者系統</h3>
+                    <ul>
+                        <li>註冊 / 登入 / 登出</li>
+                        <li>密碼雜湊(100,000 次迭代)</li>
+                        <li>預設帳號 admin / admin123</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>💬 互動功能</h3>
+                    <ul>
+                        <li><strong>按讚:</strong>toggle 狀態, 即時更新</li>
+                        <li><strong>轉推:</strong>轉推貼文</li>
+                        <li><strong>回覆:</strong>展開回覆框,輸入回覆</li>
+                        <li><strong>編輯/刪除:</strong>自己的貼文管理</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="block-title">🗂️ 4 個版本演進</h3>
+            <div class="versions">
+                <div class="version">
+                    <div class="version-num">v1</div>
+                    <h4>blog</h4>
+                    <p>基礎版本:使用者系統 + 貼文 CRUD + 簡單樣式</p>
+                </div>
+                <div class="version">
+                    <div class="version-num">v2</div>
+                    <h4>blog1_user</h4>
+                    <p>新增使用者個人頁面、查看他人貼文、返回連結</p>
+                </div>
+                <div class="version">
+                    <div class="version-num">v3</div>
+                    <h4>blog2_color</h4>
+                    <p>重新設計 UI:Twitter 黑底藍色主題 #1d9bf0</p>
+                </div>
+                <div class="version">
+                    <div class="version-num">v4</div>
+                    <h4>blog3_final</h4>
+                    <p>互動功能完整:按讚 / 轉推 / 回覆 + 卡片式設計</p>
+                </div>
+            </div>
+
+            <div class="code-block">
+                <div class="code-head">
+                    <span>資料表設計</span>
+                    <span class="code-lang">SQL</span>
+                </div>
+<pre><code>CREATE TABLE users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  username TEXT UNIQUE NOT NULL,
+  password TEXT NOT NULL,
+  salt TEXT NOT NULL
+);
+
+CREATE TABLE posts (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER NOT NULL,
+  title TEXT NOT NULL,
+  content TEXT NOT NULL
+);
+
+CREATE TABLE likes (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER NOT NULL,
+  post_id INTEGER NOT NULL,
+  UNIQUE(user_id, post_id)
+);</code></pre>
+            </div>
+
+            <h3 class="block-title">🔌 主要 API 端點(共 16 個)</h3>
+            <div class="api-grid">
+                <code>GET &nbsp;/api/user</code>
+                <code>POST /api/register</code>
+                <code>POST /api/login</code>
+                <code>POST /api/logout</code>
+                <code>GET &nbsp;/api/posts</code>
+                <code>POST /api/posts</code>
+                <code>PUT &nbsp;/api/posts/:id</code>
+                <code>DELETE /api/posts/:id</code>
+                <code>POST /api/posts/:id/like</code>
+                <code>POST /api/posts/:id/repost</code>
+                <code>POST /api/posts/:id/reply</code>
+                <code>GET &nbsp;/api/users/:id/posts</code>
+            </div>
+
+            <div class="learn-box">
+                <strong>📚 學習收穫:</strong>
+                掌握 Node.js + Express 後端開發、學習 SQLite 資料庫設計與操作、
+                理解 RESTful API 設計原則、了解密碼雜湊與 SQL 注入防護等安全性考量。
+            </div>
+        </section>
+
+        <!-- ========== 06 ========== -->
+        <section id="hw06" class="hw-section">
+            <div class="hw-header">
+                <div class="hw-num">06</div>
+                <div class="hw-titles">
+                    <span class="hw-tag tag-js">JavaScript</span>
+                    <h2>JavaScript 進階</h2>
+                    <p class="hw-sub">10 道進階練習 ・ Higher-Order Function & Closure</p>
+                </div>
+            </div>
+
+            <div class="hw-grid">
+                <div class="card">
+                    <h3>📄 專案概述</h3>
+                    <p>10 道 JavaScript 進階練習題,主要聚焦於 <strong>Higher-Order Function(高階函式)</strong>與 <strong>Closure(閉包)</strong> 兩大核心概念。</p>
+                </div>
+                <div class="card">
+                    <h3>🎯 核心概念</h3>
+                    <ul>
+                        <li><strong>高階函式:</strong>把函式當參數 / 回傳值</li>
+                        <li><strong>閉包:</strong>函式記住其詞法作用域</li>
+                        <li><strong>map / filter / reduce:</strong>陣列方法</li>
+                    </ul>
+                </div>
+                <div class="card wide">
+                    <h3>📁 10 個檔案</h3>
+                    <ul class="file-list two-col">
+                        <li><code>06/01.js</code></li>
+                        <li><code>06/02.js</code></li>
+                        <li><code>06/03.js</code></li>
+                        <li><code>06/04.js</code></li>
+                        <li><code>06/05.js</code></li>
+                        <li><code>06/06.js</code></li>
+                        <li><code>06/07.js</code></li>
+                        <li><code>06/08.js</code></li>
+                        <li><code>06/09.js</code></li>
+                        <li><code>06/10.js</code></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="code-block">
+                <div class="code-head">
+                    <span>06/01.js — 高階函式 (Higher-Order Function)</span>
+                    <span class="code-lang">JavaScript</span>
+                </div>
+<pre><code>// 高階函式:把函式當參數傳入
+function mathTool(num1, num2, action){
+    return action(num1, num2);
+}
+
+const plus  = mathTool(10, 5, function(a, b){ return a + b; });
+const minus = mathTool(10, 5, function(a, b){ return a - b; });
+
+console.log(plus);   // 15
+console.log(minus);  // 5</code></pre>
+            </div>
+
+            <div class="code-block">
+                <div class="code-head">
+                    <span>閉包 (Closure) 範例</span>
+                    <span class="code-lang">JavaScript</span>
+                </div>
+<pre><code>// 閉包:函式記住外層變數
+function multiplier(factor) {
+    return function(number) {
+        return number * factor;
+    };
+}
+
+const double = multiplier(2);
+const triple = multiplier(3);
+
+console.log(double(5));  // 10
+console.log(triple(5));  // 15</code></pre>
+            </div>
+
+            <div class="link-box">
+                <span>🤖 AI 對話紀錄:</span>
+                <a href="https://gemini.google.com/share/c2f34c52ed01" target="_blank" rel="noopener">gemini.google.com/share/c2f34c52ed01</a>
+            </div>
+
+            <div class="learn-box">
+                <strong>📚 學習收穫:</strong>
+                深入理解高階函式的概念與應用、掌握 Closure 的運作原理、
+                學習使用 map、filter、reduce 等陣列方法。
+            </div>
+        </section>
+
+        <!-- ========== 07 ========== -->
+        <section id="hw07" class="hw-section">
+            <div class="hw-header">
+                <div class="hw-num">07</div>
+                <div class="hw-titles">
+                    <span class="hw-tag tag-node">Node.js</span>
+                    <h2>Node.js 進階</h2>
+                    <p class="hw-sub">10 道進階練習 ・ Object / Callback / Async</p>
+                </div>
+            </div>
+
+            <div class="hw-grid">
+                <div class="card">
+                    <h3>📄 專案概述</h3>
+                    <p>10 道 Node.js 進階練習題,主要聚焦於 <strong>物件操作</strong>、<strong>Callback Pattern(回呼模式)</strong> 與 <strong>非同步處理</strong>。</p>
+                </div>
+                <div class="card">
+                    <h3>🎯 核心概念</h3>
+                    <ul>
+                        <li><strong>物件操作:</strong>點符號 / 中括號存取</li>
+                        <li><strong>Callback:</strong>函式作為參數傳遞</li>
+                        <li><strong>非同步:</strong>setTimeout / 錯誤處理</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>📁 檔案</h3>
+                    <ul class="file-list">
+                        <li><code>07/01.js</code> ~ <code>07/10.js</code></li>
+                        <li><code>07/package.json</code></li>
+                        <li><code>07/README.md</code></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>📦 套件</h3>
+                    <ul>
+                        <li><code>social-app</code> v1.0.0</li>
+                        <li>express / socket.io / cors</li>
+                        <li>concurrently (dev)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="code-block">
+                <div class="code-head">
+                    <span>07/01.js — 物件操作</span>
+                    <span class="code-lang">JavaScript</span>
+                </div>
+<pre><code>// 1. 宣告物件
+const post = {
+    id: 1,
+    title: "Hello World",
+    content: "Markdown content"
+};
+
+// 2. 點符號 (Dot notation)
+console.log(post.title);     // Hello World
+
+// 3. 中括號 (Bracket notation)
+console.log(post["title"]);  // Hello World</code></pre>
+            </div>
+
+            <div class="code-block">
+                <div class="code-head">
+                    <span>Callback 範例</span>
+                    <span class="code-lang">JavaScript</span>
+                </div>
+<pre><code>// Callback Pattern:函式作為參數
+function fetchData(callback) {
+    setTimeout(() =&gt; {
+        const data = { id: 1, name: "測試資料" };
+        callback(null, data);   // 錯誤優先回呼
+    }, 1000);
+}
+
+fetchData((err, result) =&gt; {
+    if (err) console.error(err);
+    else console.log(result);
+});</code></pre>
+            </div>
+
+            <div class="link-box">
+                <span>🤖 AI 對話紀錄:</span>
+                <a href="https://gemini.google.com/share/e972cd407dc9" target="_blank" rel="noopener">gemini.google.com/share/e972cd407dc9</a>
+            </div>
+
+            <div class="learn-box">
+                <strong>📚 學習收穫:</strong>
+                掌握 JavaScript 物件操作技巧、理解 Callback Pattern 的運作原理、
+                學習非同步程式的錯誤處理方式。
+            </div>
+        </section>
+
+        <!-- ========== 08 ========== -->
+        <section id="hw08" class="hw-section feature">
+            <div class="hw-header">
+                <div class="hw-num big">08</div>
+                <div class="hw-titles">
+                    <span class="hw-tag tag-full">全端專案</span>
+                    <h2>「劇」在一起 — 影視社群平台</h2>
+                    <p class="hw-sub">Node.js + Express + SQLite3 + SPA ・ 期末整合專案</p>
+                </div>
+            </div>
+
+            <div class="hw-grid">
+                <div class="card">
+                    <h3>💡 動機與目標</h3>
+                    <p><strong>動機:</strong>本身很喜歡追劇跟看電影,想做一個可以互相推薦劇和電影的社群。</p>
+                    <p><strong>目標:</strong></p>
+                    <ul>
+                        <li>使用者分享追劇 / 看電影心得</li>
+                        <li>遇到同好可以私訊聊天</li>
+                        <li>透過社群知道最近上映的電影 / 戲劇</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🚀 5 大功能模組</h3>
+                    <ul>
+                        <li><strong>登入/註冊:</strong>刷新保持登入狀態</li>
+                        <li><strong>分享牆:</strong>查看所有貼文、按愛心 / 留言</li>
+                        <li><strong>個人主頁:</strong>發文、上傳照片、編輯資料</li>
+                        <li><strong>他人主頁:</strong>查看用戶所有貼文、私訊</li>
+                        <li><strong>側邊欄:</strong>近期熱映電影 / 劇推薦</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🛠️ 技術細節</h3>
+                    <ul>
+                        <li><strong>後端:</strong>Express.js + sqlite3(原生)</li>
+                        <li><strong>前端:</strong>單一 <code>index.html</code>(SPA)</li>
+                        <li><strong>特色:</strong>即時打字狀態、照片上傳、私訊聊天</li>
+                        <li><strong>輔助:</strong>使用 Opencode AI 輔助生成</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>📁 專案結構</h3>
+                    <ul class="file-list">
+                        <li><code>08/chat/server.js</code> <small>後端入口</small></li>
+                        <li><code>08/chat/public/index.html</code> <small>SPA 主頁</small></li>
+                        <li><code>08/chat/social.db</code> <small>SQLite 資料庫</small></li>
+                        <li><code>08/chat/uploads/</code> <small>上傳照片</small></li>
+                        <li><code>08/chat/package.json</code></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="block-title">🗄️ 資料表設計</h3>
+            <div class="code-block">
+                <div class="code-head">
+                    <span>server.js (節錄)</span>
+                    <span class="code-lang">SQL</span>
+                </div>
+<pre><code>-- 使用者表
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    nickname TEXT,
+    avatar TEXT DEFAULT ''
+);
+
+-- 貼文表
+CREATE TABLE posts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    content TEXT,
+    image TEXT DEFAULT '',
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 私訊表
+CREATE TABLE messages (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    sender_id INTEGER,
+    receiver_id INTEGER,
+    content TEXT,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 按讚 / 留言 / 個人檔案
+CREATE TABLE likes      (id, post_id, user_id);
+CREATE TABLE comments   (id, post_id, user_id, content);
+CREATE TABLE user_profile (user_id, bio, favorite_genre);</code></pre>
+            </div>
+
+            <h3 class="block-title">🔌 主要 API 端點</h3>
+            <div class="api-grid">
+                <code>POST /api/register</code>
+                <code>POST /api/login</code>
+                <code>GET  /api/users</code>
+                <code>GET  /api/user/:id</code>
+                <code>GET  /api/all-posts</code>
+                <code>POST /api/posts</code>
+                <code>POST /api/like</code>
+                <code>POST /api/unlike</code>
+                <code>GET  /api/comments/:id</code>
+                <code>POST /api/comments</code>
+                <code>DELETE /api/posts/:id</code>
+                <code>PUT  /api/profile</code>
+                <code>POST /api/messages</code>
+                <code>GET  /api/messages/:a/:b</code>
+                <code>GET  /api/conversations/:id</code>
+                <code>POST /api/typing</code>
+            </div>
+
+            <div class="reflection">
+                <h3>💭 心得體會</h3>
+                <blockquote>
+                    我這個專案大多是用 opencode 做出來的,雖然是用 AI,但我覺得還是要一些技巧,
+                    要怎麼明確地說出現在的需求很重要,所以我後來大多是用條列式說明我的需求,
+                    大概的方向做出來之後再慢慢去調整。
+                    <strong>我認為看懂程式碼也很重要</strong>,
+                    因為專案的側邊頁會條列出現在熱映的電影跟戲劇,
+                    這部分我是自己手動調整,必須要找出這段程式碼寫在哪再去進行修改。
+                </blockquote>
+            </div>
+
+            <div class="learn-box">
+                <strong>📚 學習收穫:</strong>
+                掌握全端專案開發流程、學習 SQLite 資料庫設計與操作、
+                理解 SPA 架構的實作方式、體會 AI 輔助開發的技巧——明確需求、條列說明、閱讀程式碼。
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <p>© 2026 陳郁安 ・ 國立金門大學 資工系 ・ 網頁設計課程作業</p>
+            <p class="muted">本網站以純 HTML / CSS / JavaScript 製作</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
